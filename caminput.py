@@ -1,21 +1,19 @@
-import cv2
-print(cv2.__version__)
- 
-cap = cv2.VideoCapture(0)
- 
-cv2.SetCaptureProperty(cap,cv.CV_CAP_PROP_FRAME_WIDTH,480)
-cv2.SetCaptureProperty(cap,cv.CV_CAP_PROP_FRAME_HEIGHT,360)
+# coding:utf-8
 
+import cv2.cv as cv
+import time
 
-while( cap.isOpened() ):
- 
-    ret, frame = cap.read()
-    cv2.imshow('Capture',frame)
-    key = cv2.waitKey(1)
-    #print( '%08X' % (key&0xFFFFFFFF) )
-    if key & 0x00FF  == ord('q'):
+cv.NamedWindow("camera", 1)
+
+capture = cv.CaptureFromCAM(0)
+
+# 画像サイズの指定
+cv.SetCaptureProperty(capture,cv.CV_CAP_PROP_FRAME_WIDTH,320)
+cv.SetCaptureProperty(capture,cv.CV_CAP_PROP_FRAME_HEIGHT,240)
+
+while True:
+    img = cv.QueryFrame(capture)
+    cv.ShowImage("camera", img)
+    if cv.WaitKey(10) > 0:
         break
- 
-# When everything done, release the capture
-cap.release()
-cv2.destroyAllWindows()
+cv.DestroyAllWindows()
