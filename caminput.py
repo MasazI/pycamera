@@ -3,8 +3,8 @@ print(cv2.__version__)
  
 cap = cv2.VideoCapture(0)
  
-cv.SetCaptureProperty(cap,cv.CV_CAP_PROP_FRAME_WIDTH,480)
-cv.SetCaptureProperty(cap,cv.CV_CAP_PROP_FRAME_HEIGHT,360)
+cv2.SetCaptureProperty(cap,cv.CV_CAP_PROP_FRAME_WIDTH,480)
+cv2.SetCaptureProperty(cap,cv.CV_CAP_PROP_FRAME_HEIGHT,360)
 
 
 while( cap.isOpened() ):
