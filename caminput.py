@@ -3,7 +3,6 @@ print(cv2.__version__)
  
 cap = cv2.VideoCapture(0)
  
-# 画像サイズの指定
 cv.SetCaptureProperty(cap,cv.CV_CAP_PROP_FRAME_WIDTH,480)
 cv.SetCaptureProperty(cap,cv.CV_CAP_PROP_FRAME_HEIGHT,360)
 
