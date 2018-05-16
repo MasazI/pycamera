@@ -1,3 +1,11 @@
+import cv2
+assert cv2.__version__[0] == '3', 'The fisheye module requires opencv version >= 3.0.0'
+import numpy as np
+import os
+import sys
+import glob
+
+
 # You should replace these 3 lines with the output in calibration step
 DIM=(320, 240)
 K=np.array([[113.81900735196595, 0.0, 164.9429587029854], [0.0, 113.54348405565219, 116.47852997194192], [0.0, 0.0, 1.0]])
